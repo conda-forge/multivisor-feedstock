@@ -1,5 +1,5 @@
 {% set name = "multivisor" %}
-{% set version = "6.0.1" %}
+{% set version = "6.0.2" %}
 
 package:
   name: multivisor-suite
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/multivisor-{{ version }}.tar.gz
-  sha256: f834f7b6968d478e1e2e24638d4fc29a9a57947fe5642cb266f109745112835b
+  sha256: 247bd964b515be41d843f7d59159fada8f30405eb279cb55d66ef0cf141ae677
   patches:
     - setup-exclude-tests.patch
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: multivisor
