@@ -8,8 +8,6 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/multivisor-{{ version }}.tar.gz
   sha256: 247bd964b515be41d843f7d59159fada8f30405eb279cb55d66ef0cf141ae677
-  patches:
-    - setup-exclude-tests.patch
 
 build:
   number: 0
