@@ -109,7 +109,8 @@ outputs:
             - multivisor.client.cli
           python_version:
             - ${{ python_min }}.*
-            - 3.*
+            # WARNING: pendulum <=3.1.0 not compatible with python 3.14
+            - 3.13.*
       - script:
           - multivisor-cli --help
         requirements:
