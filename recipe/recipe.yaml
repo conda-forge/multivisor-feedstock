@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: multivisor
-  version: 6.0.2
+  version: "6.0.3"
 
 recipe:
   name: multivisor-suite
@@ -10,7 +10,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/multivisor-${{ version }}.tar.gz
-  sha256: 247bd964b515be41d843f7d59159fada8f30405eb279cb55d66ef0cf141ae677
+  sha256: 137b7876a06b2a4441272839d405bfd6d3027c4339e92fddfbc68c24ef89b5dd
 
 build:
   number: 1
