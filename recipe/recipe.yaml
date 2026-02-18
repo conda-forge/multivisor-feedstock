@@ -13,7 +13,7 @@ source:
   sha256: 137b7876a06b2a4441272839d405bfd6d3027c4339e92fddfbc68c24ef89b5dd
 
 build:
-  number: 1
+  number: 2
   noarch: python
 
 outputs:
@@ -43,7 +43,7 @@ outputs:
           python_version:
             - ${{ python_min }}.*
             - 3.*
-          pip_check: True
+          pip_check: true
   - package:
       name: multivisor-web
     build:
