@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: multivisor
-  version: "6.0.3"
+  version: "7.1.0"
 
 recipe:
   name: multivisor-suite
@@ -10,10 +10,10 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/multivisor-${{ version }}.tar.gz
-  sha256: 137b7876a06b2a4441272839d405bfd6d3027c4339e92fddfbc68c24ef89b5dd
+  sha256: d33a34b5c6cc0957a0855c2da65f42f29cea3df8154a1dacc4b6ced8403ed649
 
 build:
-  number: 2
+  number: 0
   noarch: python
 
 outputs:
@@ -32,10 +32,10 @@ outputs:
         - pip
         - python ${{ python_min }}.*
         - setuptools
+        - setuptools-scm
       run:
         - gevent >=1.3
         - python >=${{ python_min }}
-        - six
     tests:
       - python:
           imports:
@@ -53,9 +53,11 @@ outputs:
         - python >=${{ python_min }}
         - ${{ pin_subpackage('multivisor', exact=True) }}
         - flask
+        - flask-cors
         - werkzeug
         - blinker
-        - zerorpc-python
+        - pyzmq
+        - msgpack-python
         - supervisor
     tests:
       - python:
@@ -77,7 +79,8 @@ outputs:
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage('multivisor', exact=True) }}
-        - zerorpc-python
+        - pyzmq
+        - msgpack-python
         - supervisor
     tests:
       - python:
@@ -119,8 +122,10 @@ outputs:
 
 about:
   summary: A centralized supervisor UI (web & CLI)
-  license: GPL-3.0-or-later
-  license_file: LICENSE
+  license: GPL-3.0-or-later AND MIT
+  license_file:
+    - LICENSE
+    - multivisor/zerorpc/LICENSE
   homepage: https://github.com/tiagocoutinho/multivisor
 
 extra:
